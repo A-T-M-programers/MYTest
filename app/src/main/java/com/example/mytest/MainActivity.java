@@ -42,8 +42,13 @@ public class MainActivity extends AppCompatActivity {
                 if(result.getContents() == null) {
                     Toast.makeText(MainActivity.this, "Cancelled", Toast.LENGTH_LONG).show();
                 } else {
+                    BarCode info = new BarCode();
                     textView[2].setText(result.getContents());
-                    BarCode info = search(lbarcode,result.getContents());
+                    try {
+                        info = search(lbarcode, textView[2].getText().toString());
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
                     if (info == null){
                         textView[3].setText("Not Found Information about this BarCode");
                         textView[1].setText("");
@@ -198,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
     public BarCode search(List<BarCode> list,String id){
         BarCode barCode = null;
         for (int i = 0 ; i<list.size();i++){
-            if (list.get(i).getIDBarCode() == Integer.parseInt(id)) {
+            if (list.get(i).getIDBarCode() == Long.parseLong(id)) {
                 barCode = list.get(i);
                 System.out.println(i);
                 return barCode;

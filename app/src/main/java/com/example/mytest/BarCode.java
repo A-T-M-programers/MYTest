@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class BarCode implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    private int IDBarCode;
+    private long IDBarCode;
 
     @ColumnInfo(name = "Asset_Description")
     private String Asset_Description;
@@ -39,7 +39,7 @@ public class BarCode implements Serializable {
         return Asset_Category;
     }
 
-    public int getIDBarCode() {
+    public long getIDBarCode() {
         return IDBarCode;
     }
 }
