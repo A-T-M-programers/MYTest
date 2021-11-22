@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         textView[3] = findViewById(R.id.textview3);
         editText = findViewById(R.id.editText);
         db = DataBAseHelper.getDbInstance(this);
-//        insertdb();
         lbarcode = db.iBarCode().getAllBarCode();
 
     }
@@ -98,6 +97,102 @@ public class MainActivity extends AppCompatActivity {
         barCode.setAsset_Description("Mercedes");
         barCode.setAsset_Category("Cars");
         db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("meeting table");
+        barCode.setAsset_Category("Furniture");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Sharp Calculator");
+        barCode.setAsset_Category("Equipments");
+        db.iBarCode().insertBarcode(barCode);
+        barCode= new BarCode();
+        barCode.setAsset_Description("Compressor");
+        barCode.setAsset_Category("Electrical Equipments");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Powder Fire extinguisher");
+        barCode.setAsset_Category("Fire extinguisher");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Optas Telephone");
+        barCode.setAsset_Category("Telephone");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Samsung Printer");
+        barCode.setAsset_Category("Printer");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("MoneyGram Fax");
+        barCode.setAsset_Category("Fax");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Beta Machine");
+        barCode.setAsset_Category("Photocopier Machine");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Cassio Calculator");
+        barCode.setAsset_Category("Calculator");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("work stationdes");
+        barCode.setAsset_Category("Furniture");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Volks Wagen");
+        barCode.setAsset_Category("Cars");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Surround System");
+        barCode.setAsset_Category("Electrical Equipments");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Attendance Machine");
+        barCode.setAsset_Category("Electrical Equipments");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("LG LCD 32");
+        barCode.setAsset_Category("Television & Video");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Smoke Detector");
+        barCode.setAsset_Category("Alarm System");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("CISCO PC");
+        barCode.setAsset_Category("Computer Machine");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("HP PC");
+        barCode.setAsset_Category("Computer Machine");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("HP Printer");
+        barCode.setAsset_Category("Printer");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Planet Machine");
+        barCode.setAsset_Category("Planet Machine");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Metal Curtain");
+        barCode.setAsset_Category("Metal Curtain");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("White Curtains");
+        barCode.setAsset_Category("Curtain");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Meeting Table 220x110x72.2 ");
+        barCode.setAsset_Category("Desks & Tables");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Side Table");
+        barCode.setAsset_Category("Desks & Tables");
+        db.iBarCode().insertBarcode(barCode);
+        barCode = new BarCode();
+        barCode.setAsset_Description("Big Wooden Cabinet");
+        barCode.setAsset_Category("Cabinet");
+        db.iBarCode().insertBarcode(barCode);
 
     }
     public BarCode search(List<BarCode> list,String id){
@@ -110,5 +205,15 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return barCode;
+    }
+
+    public void SetData(View view) {
+        if(lbarcode.size()==0) {
+            insertdb();
+            lbarcode = db.iBarCode().getAllBarCode();
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Exist Data", Toast.LENGTH_LONG).show();
+        }
     }
 }
